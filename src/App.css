@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Lazeh";
+  src: url("./assets/fonts/Lahzeh-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Lazeh";
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main{
+  display: flex;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.menu:hover{
+  background-color: rgba(128, 128, 128, 0.2);
+}
