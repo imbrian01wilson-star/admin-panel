@@ -64,3 +64,14 @@
     text-align: center;
     padding: 0.5rem;
 }
+
+.trash-edit{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.trash-edit-btn{
+  cursor: pointer;
+}
+

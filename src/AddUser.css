@@ -1,0 +1,57 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1rem;
+  background-color: rgba(245, 245, 245, 0.597);
+  padding: 1rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-address {
+    gap: 0.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+input{
+    padding: 0.4rem;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 5px;
+}
+
+input:focus{
+    outline: 3px solid rgba(135, 207, 235, 0.634);
+}
+
+.form-btn{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.btns{
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btns:hover{
+    transform: scale(1.05);
+}
+
+.save-btn{
+    background-color: rgb(67, 67, 222);
+}
+
+.back-btn{
+    background-color: rgb(227, 58, 58);
+}
