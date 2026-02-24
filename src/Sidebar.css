@@ -48,7 +48,7 @@
     width: 80%;
     align-self: flex-end;
     border-radius: 0 25px 25px 0;
-    padding: 0.4rem 3rem;
+    padding: 0.4rem 2rem;
 }
 
 .sidebar-list-li:hover{
@@ -57,4 +57,10 @@
 
 .sidebar-list-li.active{
   background-color: blueviolet;
+}
+
+.sidebar-list-li-item{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

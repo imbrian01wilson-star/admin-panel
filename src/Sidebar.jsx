@@ -2,9 +2,9 @@ import { useState } from "react";
 import adminPic from "./assets/todolist.png";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
+import { Users2 } from "lucide-react";
 
 function Sidebar({ menu }) {
-
   const [active, setActive] = useState(1);
   return (
     <>
@@ -17,7 +17,12 @@ function Sidebar({ menu }) {
             id="1"
             className={`sidebar-list-li ${active === 1 ? "active" : ""}`}
           >
-            <Link onClick={() => setActive(1)} to="/users">
+            <Link
+              className="sidebar-list-li-item"
+              onClick={() => setActive(1)}
+              to="/users"
+            >
+              <Users2 size={19}></Users2>
               کاربران
             </Link>
           </li>
