@@ -75,3 +75,37 @@
   cursor: pointer;
 }
 
+.btn{
+  border: none;
+  color: white;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-yes{
+  background-color: green;
+}
+
+.btn-yes:hover{
+  background-color: rgb(1, 101, 1);
+}
+
+.btn-yes:active{
+    outline: 2px solid rgb(74, 255, 74);
+
+}
+
+.btn-no{
+  background-color: red;
+}
+
+.btn-no:hover{
+  background-color: rgb(180, 0, 0);
+}
+
+.btn-no:active{
+    outline: 2px solid rgb(255, 105, 105);
+
+}
