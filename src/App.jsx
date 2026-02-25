@@ -15,12 +15,23 @@ function App() {
   const [users, setUsers] = useState([]);
   const [mainUsers, setMainUsers] = useState([]);
 
+  const [posts, setPosts] = useState([]);
+  const [mainPosts, setMainPosts] = useState([]);
+
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
         setUsers(res.data);
         setMainUsers(res.data);
+      })
+      .catch((err) => console.log(err));
+
+          axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => {
+        setPosts(res.data);
+        setMainPosts(res.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -56,7 +67,16 @@ function App() {
             >
               <Route path=":userId"></Route>
             </Route>
-            <Route path="/posts" element={<Posts></Posts>}></Route>
+            <Route
+              path="/posts"
+              element={
+                <Posts
+                  posts={posts}
+                  setPosts={setPosts}
+                  mainPosts={mainPosts}
+                ></Posts>
+              }
+            ></Route>
             <Route path="/gallery" element={<Gallery></Gallery>}></Route>
             <Route path="/todos" element={<Todos></Todos>}></Route>
             <Route

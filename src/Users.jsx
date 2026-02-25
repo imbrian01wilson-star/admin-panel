@@ -2,8 +2,6 @@ import { Edit, Plus, Trash } from "lucide-react";
 import "./Users.css";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useState } from "react";
-import { useEffect } from "react";
 import axios from "axios";
 
 function Users({ users, setUsers, mainUsers }) {
