@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 
-function Users() {
+function Users({ users, setUsers, mainUsers }) {
   const handleDelete = (name, id) => {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -52,22 +52,10 @@ function Users() {
       });
   };
 
-  const [users, setUsers] = useState([]);
-  const [mainUsers, setMainUsers] = useState([]);
-
   const handleSearch = (e) => {
     setUsers(mainUsers.filter((u) => u.name.includes(e.target.value)));
   };
 
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((res) => {
-        setUsers(res.data);
-        setMainUsers(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
   return (
     <>
       <div className="container">
@@ -79,8 +67,8 @@ function Users() {
             placeholder="جستجو..."
             onChange={handleSearch}
           />
-          <Link to="/users/add-user">
-            <button onClick={(e) => e.stopPropagation()} className="add-btn">
+          <Link onClick={(e) => e.stopPropagation()} to="/users/add-user">
+            <button className="add-btn">
               <Plus size={25}></Plus>
             </button>
           </Link>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-function AddUser() {
+function AddUser({ users, setUsers }) {
   const { userId } = useParams();
 
   const [data, setData] = useState({
@@ -25,7 +25,12 @@ function AddUser() {
       if (data.name !== "") {
         axios
           .post("https://jsonplaceholder.typicode.com/users", data)
-          .then((res) => console.log(res));
+          .then((res) => {
+            res.data = { ...data, id: users.length + 1 };
+            if (res.status === 201) {
+              setUsers([...users, res.data]);
+            }
+          });
         Swal.fire({
           title: `کاربر ${data.name} اضافه شد`,
           icon: "success",
@@ -37,7 +42,13 @@ function AddUser() {
     } else {
       axios
         .put(`https://jsonplaceholder.typicode.com/users/${userId}`, data)
-        .then((res) => console.log(res));
+        .then((res) => {
+          if (res.status === 200) {
+            setUsers((prev) =>
+              prev.map((user) => (user.id == userId ? res.data : user)),
+            );
+          }
+        });
 
       Swal.fire({
         title: `کاربر ${data.name} ویرایش شد`,
